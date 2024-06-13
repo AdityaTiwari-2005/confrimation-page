@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation</title>
+</head>
+<body>
+  <h1>Thank you for your submission!</h1>
+  <p>Your admission is valid up to <span id="futureDate"></span>.</p>
+
+  <script>
+    // Calculate future date
+    var currentDate = new Date();
+    var futureDate = new Date(currentDate.getTime() + (90 * 24 * 60 * 60 * 1000)); // Adding 90 days to current date
+
+    // Format future date
+    var day = futureDate.getDate();
+    var month = futureDate.getMonth() + 1;
+    var year = futureDate.getFullYear();
+    var formattedFutureDate = day + '/' + month + '/' + year;
+
+    // Insert formatted future date into confirmation message
+    document.getElementById("futureDate").innerText = formattedFutureDate;
+  </script>
+</body>
+</html>
